@@ -1,0 +1,259 @@
+[
+  {
+    "id": "tab_main",
+    "type": "tab",
+    "label": "Sequential Top-Off (6 packs)",
+    "disabled": false,
+    "info": ""
+  },
+  {
+    "id": "fn_global_config",
+    "type": "function",
+    "z": "tab_main",
+    "name": "global_config",
+    "func": "const cfg={mqttBase:\"N/\",vebusPath:\"vebus/276\",packs:[{name:\"pack1\",path:\"battery/pack1\"},{name:\"pack2\",path:\"battery/pack2\"},{name:\"pack3\",path:\"battery/pack3\"},{name:\"pack4\",path:\"battery/pack4\"},{name:\"pack5\",path:\"battery/pack5\"},{name:\"pack6\",path:\"battery/pack6\"}],cvlVolts:55.2,tailFrac:0.03,dvThresh:0.4,prechargeMsMin:800,prechargeMsMax:3000,modbus:{host:\"192.168.12.50\",port:502,unitId:1}};flow.set('cfg',cfg);msg.payload=cfg;return msg;",
+    "outputs": 1
+  },
+  {
+    "id": "inj_boot",
+    "type": "inject",
+    "z": "tab_main",
+    "name": "on boot",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": 1.0,
+    "topic": "",
+    "payloadType": "date"
+  },
+  {
+    "id": "comment1",
+    "type": "comment",
+    "z": "tab_main",
+    "name": "Edit MQTT topics to your Cerbo battery services before deploy",
+    "info": "",
+    "x": 380,
+    "y": 100,
+    "wires": []
+  },
+  {
+    "id": "mqtt_soc_0",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack1 SOC",
+    "topic": "N/pack1/soc",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_v_0",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack1 Voltage",
+    "topic": "N/pack1/voltage",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_i_0",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack1 Current",
+    "topic": "N/pack1/current",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_soc_1",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack2 SOC",
+    "topic": "N/pack2/soc",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_v_1",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack2 Voltage",
+    "topic": "N/pack2/voltage",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_i_1",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack2 Current",
+    "topic": "N/pack2/current",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_soc_2",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack3 SOC",
+    "topic": "N/pack3/soc",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_v_2",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack3 Voltage",
+    "topic": "N/pack3/voltage",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_i_2",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack3 Current",
+    "topic": "N/pack3/current",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_soc_3",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack4 SOC",
+    "topic": "N/pack4/soc",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_v_3",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack4 Voltage",
+    "topic": "N/pack4/voltage",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_i_3",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack4 Current",
+    "topic": "N/pack4/current",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_soc_4",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack5 SOC",
+    "topic": "N/pack5/soc",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_v_4",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack5 Voltage",
+    "topic": "N/pack5/voltage",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_i_4",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack5 Current",
+    "topic": "N/pack5/current",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_soc_5",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack6 SOC",
+    "topic": "N/pack6/soc",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_v_5",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack6 Voltage",
+    "topic": "N/pack6/voltage",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "mqtt_i_5",
+    "type": "mqtt in",
+    "z": "tab_main",
+    "name": "pack6 Current",
+    "topic": "N/pack6/current",
+    "qos": "0",
+    "datatype": "auto",
+    "broker": "broker_local"
+  },
+  {
+    "id": "fn_scheduler",
+    "type": "function",
+    "z": "tab_main",
+    "name": "sequential top-off scheduler",
+    "func": "let st=flow.get('sched')||{phase:'idle',idx:0};const cfg=flow.get('cfg')||{};const d=msg.payload||{};if(d.nearCvl){st.phase='topoff';if(Array.isArray(d.tailOk)&&d.tailOk[st.idx]){st.idx=(st.idx+1)%((cfg.packs||[]).length||1);}}else{st.phase='idle';}flow.set('sched',st);msg.payload=st;return msg;",
+    "outputs": 1
+  },
+  {
+    "id": "fn_fsm_pack",
+    "type": "function",
+    "z": "tab_main",
+    "name": "precharge FSM (per-pack)",
+    "func": "const cfg=flow.get('cfg')||{prechargeMsMin:800,prechargeMsMax:3000,dvThresh:0.4};let s=context.get('s')||{state:'OPEN',t0:0};const now=Date.now();const dv=Math.abs((msg.vpack||0)-(msg.vbus||0));let coils={pre:false,main:false};let fault=null;function to(x){s.state=x;s.t0=now;}switch(s.state){case 'OPEN':if(msg.request==='precharge'){to('PRECHARGE');}break;case 'PRECHARGE':coils.pre=true;if((now-s.t0)>=cfg.prechargeMsMin && dv<=cfg.dvThresh){to('MAIN');}if((now-s.t0)>cfg.prechargeMsMax){fault='precharge_timeout';to('OPEN');}break;case 'MAIN':coils.main=true;if(msg.request==='open'){to('OPEN');}break;}context.set('s',s);msg.payload={i:msg.i,state:s.state,coils,fault};return msg;",
+    "outputs": 1
+  },
+  {
+    "id": "comment2",
+    "type": "comment",
+    "z": "tab_main",
+    "name": "Use node-red-contrib-modbus to map coils \u2192 LOGO!",
+    "info": "Write Single Coil (FC5) to PRECHARGE_i and MAIN_i addresses from config/modbus_map.yaml",
+    "x": 420,
+    "y": 640,
+    "wires": []
+  },
+  {
+    "id": "broker_local",
+    "type": "mqtt-broker",
+    "name": "Local Cerbo Broker",
+    "broker": "127.0.0.1",
+    "port": "1883",
+    "clientid": "sequential-topoff",
+    "usetls": false
+  }
+]

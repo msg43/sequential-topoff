@@ -1,0 +1,19 @@
+name: Validate flow.json
+
+on:
+  push:
+    paths:
+      - 'node-red/flow.json'
+  pull_request:
+    paths:
+      - 'node-red/flow.json'
+
+jobs:
+  jsonlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check JSON
+        uses: limitusus/json-syntax-check@v1
+        with:
+          pattern: 'node-red/flow.json'

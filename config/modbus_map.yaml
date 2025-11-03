@@ -1,0 +1,30 @@
+plc:
+  ip: 192.168.12.50
+  port: 502
+  unit_id: 1
+coils:
+  PRECHARGE_1: 0
+  MAIN_1: 1
+  PRECHARGE_2: 2
+  MAIN_2: 3
+  PRECHARGE_3: 4
+  MAIN_3: 5
+  PRECHARGE_4: 6
+  MAIN_4: 7
+  PRECHARGE_5: 8
+  MAIN_5: 9
+  PRECHARGE_6: 10
+  MAIN_6: 11
+discrete_inputs:
+  MAIN_FB_1: 0
+  MAIN_FB_2: 1
+  MAIN_FB_3: 2
+  MAIN_FB_4: 3
+  MAIN_FB_5: 4
+  MAIN_FB_6: 5
+holding_registers:
+  PC_MIN_MS: 0
+  PC_MAX_MS: 1
+  DV_THRESH_mV: 2
+input_registers:
+  COIL_24V_OK: 0
